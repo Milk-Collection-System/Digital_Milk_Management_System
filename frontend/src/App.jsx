@@ -3,6 +3,7 @@ import Logo from "./components/Logo";
 import StatCard from "./components/StatCard";
 import Modal from "./components/Modal";
 import Receipt from "./receipt/Receipt";
+import Login from "./pages/Login";
 import { api } from "./services/api";
 
 const today = new Date().toISOString().slice(0, 10);
@@ -32,7 +33,23 @@ function formatMoney(n) {
 }
 
 export default function App() {
+  const [authenticated, setAuthenticated] = useState(() => localStorage.getItem("dmm_auth") === "true");
+  const [currentUser, setCurrentUser] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("dmm_user") || "null"); } catch { return null; }
+  });
   const { farmers, saveFarmers, collections, saveCollections } = useLocalData();
+  function handleLogin(user) {
+    localStorage.setItem("dmm_auth", "true");
+    localStorage.setItem("dmm_user", JSON.stringify(user));
+    setCurrentUser(user);
+    setAuthenticated(true);
+  }
+  function handleLogout() {
+    localStorage.removeItem("dmm_auth");
+    localStorage.removeItem("dmm_user");
+    setCurrentUser(null);
+    setAuthenticated(false);
+  }
   const [page, setPage] = useState("dashboard");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showFarmer, setShowFarmer] = useState(false);
@@ -128,6 +145,8 @@ export default function App() {
     w.document.close(); w.focus(); w.print();
   }
 
+  if (!authenticated) return <Login onLogin={handleLogin} />;
+
   const filteredFarmers = farmers.filter(f => `${f.farmer_code} ${f.name} ${f.mobile}`.toLowerCase().includes(search.toLowerCase()));
   const nav = [
     ["dashboard", "▦", "Dashboard"],
@@ -148,7 +167,7 @@ export default function App() {
           </button>
         ))}</nav>
         <div className="sidebar-bottom">
-          <div className="operator"><div className="avatar">A</div><div><strong>Admin</strong><span>Administrator</span></div></div>
+          <div className="operator"><div className="avatar">{currentUser?.name?.[0] || "A"}</div><div className="operator-info"><strong>{currentUser?.name || "Admin"}</strong><span>{currentUser?.role || "Administrator"}</span></div><button className="logout-btn" onClick={handleLogout} title="Logout">?</button></div>
         </div>
       </aside>
 
