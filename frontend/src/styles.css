@@ -403,3 +403,90 @@
     text-align: center;
   }
 }
+
+/* =========================================================
+   PROFESSIONAL LOGIN SVG ICONS
+   ========================================================= */
+
+.input-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  display: grid;
+  place-items: center;
+  color: #5b8279;
+}
+
+.input-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.login-arrow {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  color: currentColor;
+}
+
+.login-arrow svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+/* CREATE NEW ACCOUNT */
+.create-account {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e2ebe8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #71817d;
+}
+
+.create-account-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #168f78;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.create-account-btn:hover {
+  color: #0f6f60;
+  text-decoration: underline;
+}
+
+/* FORGOT PASSWORD BELOW PASSWORD FIELD */
+.forgot-password-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.forgot-password {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #168f78;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #0f6f60;
+  text-decoration: underline;
+}
