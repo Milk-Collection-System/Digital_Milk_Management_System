@@ -37,6 +37,15 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(() => {
     try { return JSON.parse(localStorage.getItem("dmm_user") || "null"); } catch { return null; }
   });
+  const [theme, setTheme] = useState(
+  () => localStorage.getItem("dmm_theme") || "light"
+  );
+
+  function toggleTheme() {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+    localStorage.setItem("dmm_theme", nextTheme);
+  }
   const { farmers, saveFarmers, collections, saveCollections } = useLocalData();
   function handleLogin(user) {
     localStorage.setItem("dmm_auth", "true");
@@ -129,7 +138,7 @@ export default function App() {
 
   async function shareReceipt() {
     if (!selectedReceipt) return;
-    const text = `दूध संकलन पावती ${selectedReceipt.receipt_number}\n${selectedReceipt.farmerName}\nलिटर: ${selectedReceipt.quantity_litre}\nफॅट: ${selectedReceipt.fat}\nरक्कम: ₹${selectedReceipt.amount.toFixed(2)}`;
+    const text = `दुध संकलन पावती ${selectedReceipt.receipt_number}\n${selectedReceipt.farmerName}\nलिटर: ${selectedReceipt.quantity_litre}\nफॅट: ${selectedReceipt.fat}\nरक्कम: ₹${selectedReceipt.amount.toFixed(2)}`;
     if (navigator.share) {
       await navigator.share({ title: "Milk Collection Receipt", text }).catch(() => {});
     } else {
@@ -157,7 +166,7 @@ export default function App() {
   ];
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
       <aside className={`sidebar ${mobileOpen ? "open" : ""}`}>
         <Logo />
         <div className="sidebar-section">MAIN MENU</div>
@@ -175,7 +184,22 @@ export default function App() {
         <header className="topbar">
           <button className="menu-btn" onClick={() => setMobileOpen(!mobileOpen)}>☰</button>
           <div><h1>{nav.find(n => n[0] === page)?.[2] || "Dashboard"}</h1><p>{new Date().toLocaleDateString("en-IN", { day:"2-digit", month:"long", year:"numeric" })}</p></div>
-          <div className="top-actions"><span className="live-dot">● Online</span><div className="avatar">A</div></div>
+          <div className="top-actions">
+  <span className="live-dot">● Online</span>
+
+  <button
+    className="theme-toggle"
+    onClick={toggleTheme}
+    title={theme === "light" ? "Dark mode" : "Bright mode"}
+    aria-label={theme === "light" ? "Dark mode" : "Bright mode"}
+  >
+    {theme === "light" ? "☾" : "☀"}
+  </button>
+
+  <div className="avatar">
+    {(currentUser?.name || "A").charAt(0).toUpperCase()}
+  </div>
+</div>
         </header>
 
         {page === "dashboard" && (

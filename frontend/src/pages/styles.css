@@ -545,3 +545,593 @@
     gap: 5px;
   }
 }
+/* =========================================================
+   FRESH DIGITAL MILK THEME
+   ========================================================= */
+
+:root {
+  --dm-primary: #168f78;
+  --dm-primary-dark: #0f6f60;
+  --dm-primary-light: #dff7f0;
+
+  --dm-blue: #3b82c4;
+  --dm-blue-light: #e8f3fc;
+
+  --dm-gold: #d9a441;
+  --dm-gold-light: #fff5dc;
+
+  --dm-coral: #e97961;
+  --dm-coral-light: #fff0ec;
+
+  --dm-bg: #f4f8f7;
+  --dm-surface: #ffffff;
+  --dm-surface-soft: #f8fbfa;
+
+  --dm-text: #173b35;
+  --dm-text-secondary: #607772;
+  --dm-text-muted: #8b9d98;
+
+  --dm-border: #dfeae6;
+
+  --dm-sidebar: #123d36;
+  --dm-sidebar-text: #d7ebe6;
+
+  --dm-shadow: rgba(20, 70, 60, 0.08);
+}
+
+/* =========================================================
+   GENERAL LIGHT MODE
+   ========================================================= */
+
+.app-shell.light-theme {
+  background: var(--dm-bg);
+  color: var(--dm-text);
+}
+
+.app-shell.light-theme .sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #123f37 0%,
+      #0d342e 100%
+    );
+}
+
+.app-shell.light-theme .sidebar nav button {
+  color: #a9c8c1;
+}
+
+.app-shell.light-theme .sidebar nav button:hover {
+  background: rgba(255,255,255,.08);
+  color: #ffffff;
+}
+
+.app-shell.light-theme .sidebar nav button.active {
+  background: #bdf08b;
+  color: #163b33;
+}
+
+.app-shell.light-theme .sidebar-bottom {
+  border-color: rgba(255,255,255,.13);
+}
+
+.app-shell.light-theme .main {
+  background: var(--dm-bg);
+}
+
+.app-shell.light-theme .topbar {
+  background: rgba(255,255,255,.94);
+  border-bottom-color: var(--dm-border);
+  backdrop-filter: blur(14px);
+}
+
+.app-shell.light-theme .topbar h1 {
+  color: var(--dm-text);
+}
+
+.app-shell.light-theme .topbar p {
+  color: var(--dm-text-muted);
+}
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.app-shell.light-theme .welcome {
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(189,240,139,.22),
+      transparent 28%
+    ),
+    linear-gradient(
+      115deg,
+      #117563,
+      #16947c
+    );
+
+  box-shadow:
+    0 12px 30px rgba(17,117,99,.14);
+}
+
+.app-shell.light-theme .welcome p {
+  color: #d1eee7;
+}
+
+.app-shell.light-theme .eyebrow {
+  color: #bdebdc;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.app-shell.light-theme .primary {
+  background: #bdf08b;
+  color: #173d34;
+}
+
+.app-shell.light-theme .primary:hover {
+  background: #c9f59b;
+}
+
+.app-shell.light-theme .secondary {
+  background: #edf5f2;
+  color: #21564b;
+}
+
+.app-shell.light-theme .whatsapp {
+  background: #18a56c;
+}
+
+.app-shell.light-theme .text-btn {
+  color: var(--dm-primary);
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.app-shell.light-theme .stat-card {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+
+  box-shadow:
+    0 5px 20px var(--dm-shadow);
+}
+
+.app-shell.light-theme .stat-card:hover {
+  border-color: #c8e2db;
+  transform: translateY(-2px);
+  transition: .2s ease;
+}
+
+.app-shell.light-theme .stat-icon {
+  background: var(--dm-primary-light);
+  color: var(--dm-primary);
+}
+
+.app-shell.light-theme .stat-card.gold .stat-icon {
+  background: var(--dm-gold-light);
+  color: var(--dm-gold);
+}
+
+.app-shell.light-theme .stat-card.teal .stat-icon {
+  background: #dff7f0;
+  color: #168f78;
+}
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.app-shell.light-theme .panel {
+  background: var(--dm-surface);
+  border-color: var(--dm-border);
+
+  box-shadow:
+    0 5px 22px var(--dm-shadow);
+}
+
+.app-shell.light-theme .panel-head h3 {
+  color: var(--dm-text);
+}
+
+.app-shell.light-theme .panel-head p {
+  color: var(--dm-text-muted);
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.app-shell.light-theme table th {
+  color: #7e918b;
+  border-color: #e8efed;
+}
+
+.app-shell.light-theme table td {
+  color: #566e68;
+  border-color: #edf2f0;
+}
+
+.app-shell.light-theme table tbody tr:hover {
+  background: #f6fbf9;
+}
+
+.app-shell.light-theme td strong {
+  color: #23463e;
+}
+
+.app-shell.light-theme .receipt-no {
+  color: var(--dm-primary);
+}
+
+.app-shell.light-theme .small-btn {
+  background: #e4f7f1;
+  color: #16816c;
+}
+
+.app-shell.light-theme .status {
+  background: #e3f7ed;
+  color: #16805c;
+}
+
+/* =========================================================
+   COLLECTION
+   ========================================================= */
+
+.app-shell.light-theme .collection-form select,
+.app-shell.light-theme .collection-form input,
+.app-shell.light-theme .modal-form input,
+.app-shell.light-theme .modal-form select,
+.app-shell.light-theme .toolbar input {
+  background: #ffffff;
+  border-color: #dce8e4;
+  color: #23463e;
+}
+
+.app-shell.light-theme .collection-form select:focus,
+.app-shell.light-theme .collection-form input:focus,
+.app-shell.light-theme .modal-form input:focus,
+.app-shell.light-theme .modal-form select:focus,
+.app-shell.light-theme .toolbar input:focus {
+  border-color: #39a088;
+  box-shadow: 0 0 0 4px rgba(57,160,136,.10);
+}
+
+.app-shell.light-theme .farmer-chip {
+  background: #f1faf7;
+  border-color: #d9ebe5;
+}
+
+.app-shell.light-theme .segmented {
+  background: #eef5f2;
+}
+
+.app-shell.light-theme .segmented button.selected {
+  background: #ffffff;
+  color: var(--dm-primary-dark);
+  box-shadow: 0 2px 7px rgba(20,70,60,.10);
+}
+
+.app-shell.light-theme .amount-box {
+  background:
+    linear-gradient(
+      110deg,
+      #116c5b,
+      #17947b
+    );
+}
+
+/* =========================================================
+   REPORTS
+   ========================================================= */
+
+.app-shell.light-theme .empty-report {
+  background: #ffffff;
+}
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #dce8e4;
+  border-radius: 11px;
+
+  background: #f4f9f7;
+
+  color: #216c5d;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(12deg) scale(1.04);
+
+  background: #e5f5ef;
+  border-color: #bcded5;
+}
+
+.theme-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.app-shell.dark-theme {
+  --dm-bg: #101b19;
+  --dm-surface: #172522;
+  --dm-surface-soft: #1b2b27;
+
+  --dm-text: #e8f3ef;
+  --dm-text-secondary: #a9c0ba;
+  --dm-text-muted: #819992;
+
+  --dm-border: #2b403b;
+
+  background: #101b19;
+  color: #e8f3ef;
+}
+
+.app-shell.dark-theme .sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #0a2721,
+      #071d19
+    );
+}
+
+.app-shell.dark-theme .sidebar nav button {
+  color: #9bb8b1;
+}
+
+.app-shell.dark-theme .sidebar nav button:hover {
+  background: rgba(255,255,255,.07);
+  color: #ffffff;
+}
+
+.app-shell.dark-theme .sidebar nav button.active {
+  background: #b9eb83;
+  color: #173a32;
+}
+
+.app-shell.dark-theme .sidebar-bottom {
+  border-color: #29423c;
+}
+
+.app-shell.dark-theme .main {
+  background: #101b19;
+}
+
+.app-shell.dark-theme .topbar {
+  background: rgba(20,34,31,.94);
+  border-color: #2a403a;
+}
+
+.app-shell.dark-theme .topbar h1 {
+  color: #edf7f4;
+}
+
+.app-shell.dark-theme .topbar p {
+  color: #829a94;
+}
+
+.app-shell.dark-theme .welcome {
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(189,240,139,.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #0d5548,
+      #117763
+    );
+}
+
+.app-shell.dark-theme .stat-card,
+.app-shell.dark-theme .panel {
+  background: #172522;
+  border-color: #2a403b;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.16);
+}
+
+.app-shell.dark-theme .stat-card:hover {
+  border-color: #39635a;
+}
+
+.app-shell.dark-theme .stat-copy span,
+.app-shell.dark-theme .stat-copy small {
+  color: #829b94;
+}
+
+.app-shell.dark-theme .stat-copy strong {
+  color: #e7f2ee;
+}
+
+.app-shell.dark-theme .panel-head h3,
+.app-shell.dark-theme .page-actions h2 {
+  color: #e8f3ef;
+}
+
+.app-shell.dark-theme .panel-head p,
+.app-shell.dark-theme .page-actions p {
+  color: #829992;
+}
+
+.app-shell.dark-theme table th {
+  color: #819892;
+  border-color: #2a3d39;
+}
+
+.app-shell.dark-theme table td {
+  color: #a9bdb8;
+  border-color: #263a35;
+}
+
+.app-shell.dark-theme table tbody tr:hover {
+  background: #1c302b;
+}
+
+.app-shell.dark-theme td strong {
+  color: #e0ece8;
+}
+
+.app-shell.dark-theme .collection-form select,
+.app-shell.dark-theme .collection-form input,
+.app-shell.dark-theme .modal-form input,
+.app-shell.dark-theme .modal-form select,
+.app-shell.dark-theme .toolbar input {
+  background: #1b2c28;
+  border-color: #344b45;
+  color: #e6f2ee;
+}
+
+.app-shell.dark-theme .collection-form select:focus,
+.app-shell.dark-theme .collection-form input:focus,
+.app-shell.dark-theme .modal-form input:focus,
+.app-shell.dark-theme .modal-form select:focus,
+.app-shell.dark-theme .toolbar input:focus {
+  border-color: #42ad91;
+  box-shadow: 0 0 0 4px rgba(66,173,145,.12);
+}
+
+.app-shell.dark-theme .farmer-chip {
+  background: #1b302b;
+  border-color: #30463f;
+}
+
+.app-shell.dark-theme .segmented {
+  background: #10221e;
+}
+
+.app-shell.dark-theme .segmented button {
+  color: #8ca39d;
+}
+
+.app-shell.dark-theme .segmented button.selected {
+  background: #263b35;
+  color: #bcebdc;
+}
+
+.app-shell.dark-theme .tips {
+  color: #dceae5;
+}
+
+.app-shell.dark-theme .check {
+  color: #a7bbb5;
+  border-color: #2b403b;
+}
+
+.app-shell.dark-theme .tip-note {
+  background: #1c302b;
+  color: #9eb3ad;
+}
+
+.app-shell.dark-theme .modal-backdrop {
+  background: rgba(0,0,0,.72);
+}
+
+.app-shell.dark-theme .modal {
+  background: #172522;
+  color: #e8f3ef;
+}
+
+.app-shell.dark-theme .modal-head {
+  border-color: #2a403b;
+}
+
+.app-shell.dark-theme .modal-head h3 {
+  color: #edf7f4;
+}
+
+.app-shell.dark-theme .icon-btn {
+  background: #243832;
+  color: #bfd0ca;
+}
+
+.app-shell.dark-theme .receipt {
+  background: #ffffff;
+  color: #17322c;
+}
+
+.app-shell.dark-theme .theme-toggle {
+  background: #263a35;
+  border-color: #3a514b;
+  color: #ffe49a;
+}
+
+.app-shell.dark-theme .theme-toggle:hover {
+  background: #304941;
+}
+
+/* =========================================================
+   SMOOTH THEME TRANSITION
+   ========================================================= */
+
+.app-shell,
+.app-shell *,
+.app-shell *::before,
+.app-shell *::after {
+  transition:
+    background-color .22s ease,
+    border-color .22s ease,
+    color .22s ease;
+}
+
+button,
+input,
+select {
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+/* Don't animate table/layout movement */
+table,
+table *,
+img {
+  transition:
+    background-color .22s ease,
+    border-color .22s ease,
+    color .22s ease;
+}
+
+/* =========================================================
+   MOBILE THEME BUTTON
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .theme-toggle {
+    width: 37px;
+    height: 37px;
+  }
+
+  .theme-icon {
+    font-size: 17px;
+  }
+}
